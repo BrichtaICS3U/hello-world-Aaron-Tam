@@ -1,3 +1,13 @@
+import math
+def abs(x):
+    if x > 0:
+        return x
+
+    elif x < 0:
+        return -x
+
+    else:
+        return 0
 #Heron's Method for Calculating Square Roots
 #Stub by JP Brichta, March 2018
 #
@@ -8,8 +18,16 @@
 #https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method
 #
 
-def heron(x, accuracy=0.001):
+def heron(x,G, accuracy=0.001):
   """Compute the square root of the number x using Heron's method. The accuracy is defaulted to three decimal places, but you
   can use a larger or smaller number if you wish. The smaller the number, the more time the calculation will take."""
-  
-  return 1
+  while abs(G**2-x) >= accuracy:
+      G = (G+x/G)/2
+  return G
+
+
+
+
+
+
+
